@@ -52,11 +52,11 @@ class Battle < ActiveRecord::Base
   end
 
   def left_random
-    the_randoms.left
+    @left ||= the_randoms.left
   end
 
   def right_random
-    the_randoms.right
+    @right ||= the_randoms.right
   end
 
 end
