@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090426030451) do
+ActiveRecord::Schema.define(:version => 20090426034235) do
 
   create_table "battle_matchups", :force => true do |t|
     t.integer  "the_random_id"
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(:version => 20090426030451) do
 
   create_table "the_randoms", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "battle_matchup_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
