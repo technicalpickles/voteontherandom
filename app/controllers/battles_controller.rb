@@ -11,7 +11,8 @@ class BattlesController < ApplicationController
 
     flash[:last_id] = @battle.to_param
 
-    redirect_to root_url
+    
+    redirect_to params[:return_to] || root_url
   end
 
 end

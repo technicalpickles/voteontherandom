@@ -16,6 +16,7 @@
       = @battle.battle_matchups.right.votes.count
 
   %tr
-    %td= image_tag @battle.the_randoms.left.image_filename
+    %td= link_to image_tag(@battle.the_randoms.left.image_filename), vote_battle_path(@battle, :side => 'left', :return_to => result_path(@battle)), :method => :post
+
     %th VERSUS
-    %td= image_tag @battle.the_randoms.right.image_filename
+    %td= link_to image_tag(@battle.the_randoms.right.image_filename), vote_battle_path(@battle, :side => 'right', :return_to => result_path(@battle)), :method => :post
