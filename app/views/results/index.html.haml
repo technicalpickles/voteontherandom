@@ -1,7 +1,7 @@
 %h1 Results of VOTE ON THE RANDOM!
 
 %ul
-  - @battles.each do |battle|
-    %li
-      = link_to one_line_results(battle), result_path(battle)
+  - @battles.in_groups_of(4, false).each do |battle_group|
+    - battle_group.each do |battle|
+      = result_chart(battle)
 
