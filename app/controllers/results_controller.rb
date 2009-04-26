@@ -3,4 +3,8 @@ class ResultsController < ApplicationController
     @battles = Battle.all
   end
 
+  def show
+    @battle = Battle.find params[:id]
+  end
+
 end

@@ -3,8 +3,5 @@
 %ul
   - @battles.each do |battle|
     %li
-      = battle.battle_matchups.left.the_random
-      == (#{battle.battle_matchups.left.votes.count})
-      versus
-      = battle.battle_matchups.right.the_random
-      == (#{battle.battle_matchups.right.votes.count})
+      = link_to one_line_results(battle), result_path(battle)
+

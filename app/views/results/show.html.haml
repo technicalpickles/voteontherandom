@@ -1,0 +1,19 @@
+%table
+  %tr
+    %th
+      = @battle.battle_matchups.left.the_random
+    %th
+    %th
+      = @battle.battle_matchups.right.the_random
+
+  %tr
+    %th
+      = @battle.battle_matchups.left.votes.count
+    %th
+    %th
+      = @battle.battle_matchups.right.votes.count
+
+  %tr
+    %td= image_tag @battle.the_randoms.left.image_filename
+    %th VERSUS
+    %td= image_tag @battle.the_randoms.right.image_filename
