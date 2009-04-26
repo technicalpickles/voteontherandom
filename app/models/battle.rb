@@ -1,7 +1,7 @@
 class Battle < ActiveRecord::Base
   skip_time_zone_conversion_for_attributes = []
 
-  has_many :battle_matchups do
+  has_many :battle_matchups, :order => 'id asc' do
     def left
       reload unless loaded?
       proxy_target[0]
