@@ -9,22 +9,15 @@
 
   %table
     %tr
-      %th
+      %th{:width => '33%'}
         = @battle.battle_matchups.left.the_random
-      %th
-      %th
+      %th{:width => '33%'}
+      %th{:width => '33%'}
         = @battle.battle_matchups.right.the_random
 
     %tr
-      %th
-        = @battle.battle_matchups.left.votes.count
-      %th
-      %th
-        = @battle.battle_matchups.right.votes.count
-
-    %tr
       %td= link_to image_tag(@battle.the_randoms.left.image_filename), vote_battle_path(@battle, :side => 'left'), :method => :post
-      %th VERSUS
+      %th.versus VERSUS
       %td= link_to image_tag(@battle.the_randoms.right.image_filename), vote_battle_path(@battle, :side => 'right'), :method => :post
 
 - else

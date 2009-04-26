@@ -12,6 +12,7 @@ class Battle < ActiveRecord::Base
       proxy_target[1]
     end
   end
+
   has_many :the_randoms, :through => :battle_matchups do
     def left
       reload unless loaded?

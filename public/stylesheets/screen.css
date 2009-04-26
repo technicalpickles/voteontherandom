@@ -1,0 +1,22 @@
+body {
+  background-color: pink;
+}
+
+th {
+  background: white;
+}
+
+.container {
+  background-color: white;
+  padding-top: 20px
+  padding-bottom: 20px
+  border: 2px solid black;
+}
+
+h1 {
+  text-align: center;
+}
+
+td, th {
+  text-align: center;
+}

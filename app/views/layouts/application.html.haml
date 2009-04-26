@@ -1,0 +1,13 @@
+!!! Transitional
+%html
+  %head
+    %title Vote on the RANDOM!
+    = stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+    = stylesheet_link_tag 'blueprint/print', :media => 'print'
+    = "<!--[if IE]>#{stylesheet_link_tag 'blueprint/ie', :media => 'screen'}<![endif]-->"
+    = stylesheet_link_tag 'screen', :media => 'screen'
+  %body
+    .container
+
+      #content{:class => 'column prepend-1 append-1 span-22'}
+        = yield
