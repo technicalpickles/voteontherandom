@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090426024411) do
+ActiveRecord::Schema.define(:version => 20090426030451) do
 
   create_table "battle_matchups", :force => true do |t|
     t.integer  "the_random_id"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(:version => 20090426024411) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "slugs", :force => true do |t|
+    t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope",          :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_name_and_sluggable_type_and_scope_and_sequence", :unique => true
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "the_randoms", :force => true do |t|
     t.string   "name"
