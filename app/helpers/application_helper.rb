@@ -38,7 +38,7 @@ module ApplicationHelper
   end
 
   def link_to_battle_side(battle, side)
-    side = battle.battle_matchups.send(side).the_random
+    side = battle.send("#{side}_random")
     link_to side, side
   end
   
