@@ -1,6 +1,12 @@
-%h1 Vote on the ultimate showdown of a limited set of random!
+%h1 VOTE ON THE RANDOM!!
+
+- if @last_battle
+  %h2 Here are the results from the last battle:
+  %p= link_to one_line_results(@last_battle), result_path(@last_battle)
 
 - if @battle
+  %h2 Vote on the best random below:
+
   %table
     %tr
       %th
