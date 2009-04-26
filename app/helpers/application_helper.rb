@@ -11,9 +11,11 @@ module ApplicationHelper
   def result_chart(battle, options = {})
     data = [ [battle.battle_matchups.left.the_random.to_s, battle.battle_matchups.left.votes.count], [battle.battle_matchups.right.the_random.to_s, battle.battle_matchups.right.votes.count]]
 
+    
     options[:width] ||= 250
     options[:height] ||= 100
-    options[:colors] = %w(0DB2AC F5DD7E FC8D4D FC694D FABA32 704948 968144 C08FBC ADD97E)
+    options[:colors] = [battle.left_random.color, battle.right_random.color]
+
     dt = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-."
     options[:divisor] ||= 1
 

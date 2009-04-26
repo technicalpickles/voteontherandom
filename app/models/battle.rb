@@ -51,4 +51,12 @@ class Battle < ActiveRecord::Base
     not_voted_on_by(session_id).rand
   end
 
+  def left_random
+    the_randoms.left
+  end
+
+  def right_random
+    the_randoms.right
+  end
+
 end

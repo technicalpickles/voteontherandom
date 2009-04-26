@@ -1,10 +1,27 @@
 carrot http://www.flickr.com/photos/nickwheeleroz/2281759696/ #ff441c
 gps http://www.flickr.com/photos/joc67/774419510/ #927f88 
 sports bra http://www.flickr.com/photos/cpbills/2766064375/  ##00cb8e
-tie rack http://www.flickr.com/photos/joebeone/2240389708/ #830000
+tie rack http://www.flickr.com/photos/joebeone/2240389708/ #830000 
 kitten http://www.flickr.com/photos/paulesson/2353322369/ #712d2b 
 jenga http://www.flickr.com/photos/sincretic/2142724926/ #140909
 kathy lee gifford http://www.flickr.com/photos/greginhollywood/3321147050/ #a18061 
 scheme http://ecx.images-amazon.com/images/I/51Y1M205THL.jpg #639ac8 
 physics http://www.flickr.com/photos/forgottenstar27/2341994602/ #c69026
 nand gate http://www.flickr.com/photos/priskiller/454192540/ #322c3f 
+
+    colors = {
+'carrot'  => 'ff441c',
+'gps'  => '927f88' ,
+'sports-bra'  => '00cb8e',
+'tie-rack'  => '830000',
+'kitten'  => '712d2b' ,
+'jenga'  => '140909',
+'kathy-lee-gifford'  => 'a18061' ,
+'scheme'  => '639ac8' ,
+'physics'  => 'c69026',
+'nand-gates'  => '322c3f'
+    }
+    colors.each_pair do |id, color|
+      the_random = TheRandom.find(id)
+      the_random.update_attributes!(:color => color)
+    end
