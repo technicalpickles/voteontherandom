@@ -28,7 +28,9 @@ module ApplicationHelper
 
 
   def result_chart(battle)
-    google_pie_chart [ [battle.battle_matchups.left.the_random.to_s, battle.battle_matchups.left.votes.count], [battle.battle_matchups.right.the_random.to_s, battle.battle_matchups.right.votes.count]]
+    chart = google_pie_chart [ [battle.battle_matchups.left.the_random.to_s, battle.battle_matchups.left.votes.count], [battle.battle_matchups.right.the_random.to_s, battle.battle_matchups.right.votes.count]]
+
+    link_to chart, result_path(battle)
   end
   
 end
