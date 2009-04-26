@@ -1,0 +1,8 @@
+%h1== VOTE RESULTS FOR THE RANDOM OF #{@the_random.to_s.upcase}
+
+%table
+  - @the_random.battles.in_groups_of(3, false) do |battle_group|
+    %tr
+      - battle_group.each do |battle|
+
+        %td{:width => '33%'}= result_chart(battle)

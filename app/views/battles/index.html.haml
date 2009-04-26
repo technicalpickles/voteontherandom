@@ -2,7 +2,7 @@
 
 - if @last_battle
   %h2 Here are the results from the last battle:
-  %p= link_to one_line_results(@last_battle), result_path(@last_battle)
+  = result_chart(@last_battle)
 
 - if @battle
   %h2 Vote on the best random below:
