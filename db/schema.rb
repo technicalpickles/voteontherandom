@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090426034235) do
+ActiveRecord::Schema.define(:version => 20090426042948) do
 
   create_table "battle_matchups", :force => true do |t|
     t.integer  "the_random_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20090426034235) do
     t.integer  "battle_matchup_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "session_id"
   end
 
 end

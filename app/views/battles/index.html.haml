@@ -1,19 +1,25 @@
-%h1 Vote on the ultimate showdown of the random!
+%h1 Vote on the ultimate showdown of a limited set of random!
 
-%table
-  %tr
-    %th
-      = @battle.battle_matchups.left.the_random
-    %th
-      = @battle.battle_matchups.right.the_random
+- if @battle
+  %table
+    %tr
+      %th
+        = @battle.battle_matchups.left.the_random
+      %th
+      %th
+        = @battle.battle_matchups.right.the_random
 
-  %tr
-    %th
-      = @battle.battle_matchups.left.votes.count
-    %th
-      = @battle.battle_matchups.right.votes.count
+    %tr
+      %th
+        = @battle.battle_matchups.left.votes.count
+      %th
+      %th
+        = @battle.battle_matchups.right.votes.count
 
-  %tr
-    %td= link_to image_tag(@battle.the_randoms.left.image_filename), vote_battle_path(@battle, :side => 'left'), :method => :post
-    %td= link_to image_tag(@battle.the_randoms.right.image_filename), vote_battle_path(@battle, :side => 'right'), :method => :post
+    %tr
+      %td= link_to image_tag(@battle.the_randoms.left.image_filename), vote_battle_path(@battle, :side => 'left'), :method => :post
+      %th VERSUS
+      %td= link_to image_tag(@battle.the_randoms.right.image_filename), vote_battle_path(@battle, :side => 'right'), :method => :post
 
+- else
+  %p Hey, looks like you've voted on all the battles already.
