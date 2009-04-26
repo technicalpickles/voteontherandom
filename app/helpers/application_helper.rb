@@ -32,5 +32,11 @@ module ApplicationHelper
 
     link_to chart, result_path(battle)
   end
+
+  def link_to_battle_side(battle, side)
+    side = battle.battle_matchups.send(side).the_random
+    link_to side, side
+    
+  end
   
 end

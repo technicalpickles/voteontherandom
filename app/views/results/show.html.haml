@@ -3,10 +3,10 @@
 %table
   %tr
     %th{:width => '33%'}
-      = @battle.battle_matchups.left.the_random
+      = link_to_battle_side @battle, :left
     %th{:width => '33%'}
     %th{:width => '33%'}
-      = @battle.battle_matchups.right.the_random
+      = link_to_battle_side @battle, :right
 
   %tr
     %td= link_to image_tag(@battle.the_randoms.left.image_filename), vote_battle_path(@battle, :side => 'left', :return_to => result_path(@battle)), :method => :post
