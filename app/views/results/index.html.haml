@@ -1,0 +1,10 @@
+%h1 Results from the ultimate showdown!
+
+%ul
+  - @battles.each do |battle|
+    %li
+      = battle.battle_matchups.left.the_random
+      == (#{battle.battle_matchups.left.votes.count})
+      versus
+      = battle.battle_matchups.right.the_random
+      == (#{battle.battle_matchups.right.votes.count})
