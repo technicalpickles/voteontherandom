@@ -16,9 +16,9 @@
         = link_to_battle_side @battle, :right
 
     %tr
-      %td= link_to image_tag(@battle.the_randoms.left.image_filename), vote_battle_path(@battle, :side => 'left'), :method => :post
+      %td= link_to image_tag(@battle.left_random.image_filename), vote_battle_path(@battle, :side => 'left'), :method => :post
       %th.versus VERSUS
-      %td= link_to image_tag(@battle.the_randoms.right.image_filename), vote_battle_path(@battle, :side => 'right'), :method => :post
+      %td= link_to image_tag(@battle.right_random.image_filename), vote_battle_path(@battle, :side => 'right'), :method => :post
 
 - else
   %h1 Whoops, you voted on everything

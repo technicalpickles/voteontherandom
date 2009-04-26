@@ -8,6 +8,7 @@ module ApplicationHelper
   end
 
 
+  # hacked from http://blog.hungrymachine.com/2008/02/16/simple-google-pie-chart-graph-in-rails/
   def result_chart(battle, options = {})
     data = [ [battle.battle_matchups.left.the_random.to_s, battle.battle_matchups.left.votes.count], [battle.battle_matchups.right.the_random.to_s, battle.battle_matchups.right.votes.count]]
 
@@ -25,7 +26,7 @@ module ApplicationHelper
 
     opts = {
       :cht => "p",
-      :chd => "e:#{data.map{|k,v|v=v/options[:divisor];dt[v/64..v/64]+dt[v%64..v%64]}}",
+      :chd => "e:#{data.map{|k,v|v=v/options[:divisor]; dt[v/64..v/64]+dt[v%64..v%64]}}",
       :chl => "#{data.map { |k,v| CGI::escape(k + " (#{v})")}.join('|')}",
       :chs => "#{options[:width]}x#{options[:height]}",
       :chco => options[:colors].slice(0, data.length).join(',')
@@ -39,7 +40,6 @@ module ApplicationHelper
   def link_to_battle_side(battle, side)
     side = battle.battle_matchups.send(side).the_random
     link_to side, side
-    
   end
   
 end
