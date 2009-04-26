@@ -15,6 +15,6 @@ class Battle < ActiveRecord::Base
   end
 
   def to_s
-    
+    "#{the_randoms.left} versus #{the_randoms.right}"
   end
 end

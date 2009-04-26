@@ -4,4 +4,8 @@ class TheRandom < ActiveRecord::Base
   def image_filename
     "#{friendly_id}.png"
   end
+
+  def to_s
+    name
+  end
 end
